@@ -42,14 +42,13 @@ function countDownLetVariation() {
 
 // Recursive solution
 function countDownRecursive(time) {
-    function tick() {
+    (function tick() {
         console.log(time || "Lift-off!");
         time--;
         if (time >= 0) {
             setTimeout(tick, 1000);
         }
-    }
-    tick();
+    })();
 }
 
 countDownVarBasic();
