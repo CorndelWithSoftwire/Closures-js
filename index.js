@@ -1,5 +1,5 @@
 // Basic solution using var
-function countDown1() {
+function countDownVarBasic() {
     for (var i = 3; i >= 0; i--) {
         (function () {
             var j = i;
@@ -11,7 +11,7 @@ function countDown1() {
 }
 
 // Variation on var that passes in i to the IIFE
-function countDown2() {
+function countDownVarVariation() {
     for (var i = 3; i >= 0; i--) {
         (function (j) {
             setTimeout(function () {
@@ -22,7 +22,7 @@ function countDown2() {
 }
 
 // Basic solution using let
-function countDown3() {
+function countDownLetBasic() {
     for (var i = 3; i >= 0; i--) {
         let j = i;
         setTimeout(function() {
@@ -32,7 +32,7 @@ function countDown3() {
 }
 
 // Variation on let that makes use of let's scoping in for loops
-function countDown4() {
+function countDownLetVariation() {
     for (let i = 3; i >= 0; i--) {
         setTimeout(function() {
             console.log(i || "Lift-off!");
@@ -40,7 +40,20 @@ function countDown4() {
     }
 }
 
-countDown1();
-countDown2();
-countDown3();
-countDown4();
+// Recursive solution
+function countDownRecursive(time) {
+    function tick() {
+        console.log(time || "Lift-off!");
+        time--;
+        if (time >= 0) {
+            setTimeout(tick, 1000);
+        }
+    }
+    tick();
+}
+
+countDownVarBasic();
+countDownVarVariation();
+countDownLetBasic();
+countDownLetVariation();
+countDownRecursive(3);
