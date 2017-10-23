@@ -25,7 +25,7 @@ function countDownVarVariation() {
 function countDownLetBasic() {
     for (var i = 3; i >= 0; i--) {
         let j = i;
-        setTimeout(function() {
+        setTimeout(function () {
             console.log(j || "Lift-off!");
         }, (3 - j) * 1000);
     }
@@ -34,7 +34,7 @@ function countDownLetBasic() {
 // Variation on let that makes use of let's scoping in for loops
 function countDownLetVariation() {
     for (let i = 3; i >= 0; i--) {
-        setTimeout(function() {
+        setTimeout(function () {
             console.log(i || "Lift-off!");
         }, (3 - i) * 1000);
     }
